@@ -27,7 +27,7 @@ document.addEventListener("DOMContentLoaded", () => {
     let hasMedia = false;
 
     // Ambil data kontak dari API
-    fetch("http://localhost:3000/contacts")
+    fetch("http://localhost:3000/contact")
         .then((response) => response.json())
         .then((contactData) => {
             // Isi contactMap dengan data dari API
