@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WA Logger</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body onload="document.body.style.opacity=1;">
+    <div class="container">
+        <!-- Sidebar -->
+        <div class="sidebar">
+            <!-- Title -->
+            <div class="chats">
+                <h2>Chats</h2>
+            </div>
+
+            <!-- Search Bar -->
+            <div class="search-bar">
+                <input type="text" placeholder="Search">
+            </div>
+
+            <!-- Chat List -->
+            <div class="chat-list" id="chat-list">
+                <div class="chat-item">
+                    
+                </div>
+            </div>
+        </div>
+
+        <!-- Chat Window -->
+        <div class="chat-window">
+            <!-- Nama kontak atau grup di bagian atas -->
+            <div class="chat-header">
+                <p></p>
+            </div>
+
+            <!-- Isi chat -->
+            <div class="chat-content" id="chat">
+            
+            </div>
+
+            <!-- Bagian untuk input pesan -->
+            <div class="chat-footer">
+                <!-- Placeholder untuk preview media -->
+                <div class="media-placeholder" style="display: none;">
+                    <img id="mediaPreview" src="./placeholder.png" alt="Media Placeholder">
+                    <span class="remove-media">&times;</span>
+                </div>
+            
+                <!-- Container dengan tombol upload -->
+                <div class="media-container" style="display: none;">
+                    <button class="upload-image" onclick="triggerImageUpload()">Upload Gambar</button>
+                    <button class="upload-video" onclick="triggerVideoUpload()">Upload Video</button>
+                </div>
+
+                <!-- Form untuk upload file -->
+                <form id="file-upload-form" action="/upload" method="POST" enctype="multipart/form-data" style="display: none;">
+                    <input type="file" id="file-input" name="file" accept="image/png, image/jpeg, video/mp4, video/mkv" onchange="previewMedia(event)">
+                    <button type="submit">Upload</button>
+                </form>
+
+                <!-- Input Pesan -->
+                <div class="iniInput">
+                    <button class="addMedia" onclick="toggleMediaOptions()">+</button>
+                    <input type="text" class="message-input" placeholder="Type a message">
+                    <button class="send">Send</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="./script.js"></script>
+    <script src="./inputReply.js"></script>
+    <script src="./openMedia.js"></script>
+    <script src="uploadMedia.js"></script>
+</body>
+</html>
